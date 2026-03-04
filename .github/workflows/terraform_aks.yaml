@@ -27,7 +27,7 @@ jobs:
   terraform-plan:
     name: "Terraform Plan"
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment || 'main' }}
+    environment: ${{ github.event.inputs.environment || 'prod' }}
     defaults:
       run:
         working-directory: environments/${{ github.event.inputs.environment || 'prod' }}
@@ -90,7 +90,7 @@ jobs:
     needs: terraform-plan
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     environment:
-      name: main
+      name: prod
       url: "https://portal.azure.com"
     defaults:
       run:
