@@ -1,0 +1,12 @@
+variable "prefix"                          { type = string }
+variable "environment"                     { type = string }
+variable "location"                        { type = string }
+variable "vnet_address_space"              { type = list(string) }
+variable "aks_subnet_cidr"                 { type = list(string) }
+variable "appgw_subnet_cidr"               { type = list(string) }
+variable "kubernetes_version"              { type = string }
+variable "admin_group_object_ids"          { type = list(string) }
+variable "api_server_authorized_ip_ranges" { type = list(string) }
+variable "alert_email"                     { type = string }
+variable "allowed_ip_ranges"               { type = list(string) }
+variable "tags"                            { type = map(string) }
