@@ -27,7 +27,7 @@ jobs:
   terraform-plan:
     name: "Terraform Plan"
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment || 'prod' }}
+    environment: ${{ github.event.inputs.environment || 'main' }}
     defaults:
       run:
         working-directory: environments/${{ github.event.inputs.environment || 'prod' }}
